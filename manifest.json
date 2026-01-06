@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Allegro – Zbieracz ID ofert",
+  "version": "1.4",
+  "description": "Zbieraj wszystkie offerId z widocznych ofert i kopiuj do Excela",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Allegro ID Grabber"
+  },
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://business.allegro.pl/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://business.allegro.pl/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
